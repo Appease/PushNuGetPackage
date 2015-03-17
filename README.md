@@ -1,11 +1,11 @@
 ####What is it?
 
-A [PoshCI](https://github.com/PoshCI/PoshCI) step that pushes one or more NuGet packages to a .nupkg source
+A [PoshDevOps](https://github.com/PoshDevOps/PoshDevOps) step that pushes one or more NuGet packages to a .nupkg source
 
 ####How do I install it?
 
 ```PowerShell
-Add-CIStep -Name "YOUR-CISTEP-NAME" -PackageId "PushNuGetPackage"
+Add-PoshDevOpsTask -Name "YOUR-CISTEP-NAME" -PackageId "PushNuGetPackage"
 ```
 
 ####What parameters are available?

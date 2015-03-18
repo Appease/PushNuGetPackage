@@ -58,5 +58,5 @@ $ApiKey
 ```
 
 ####What's the build status?
-![](https://ci.appveyor.com/api/projects/status/rcevsilgkskrk9wi?svg=true)
+![](https://ci.appveyor.com/api/projects/status/ar0nqtlyomlwuhv7?svg=true)
 

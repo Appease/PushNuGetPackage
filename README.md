@@ -1,6 +1,6 @@
 ####What is it?
 
-A [PoshDevOps](https://github.com/PoshDevOps/PoshDevOps) step that pushes one or more NuGet packages to a .nupkg source
+A [PoshDevOps](https://github.com/PoshDevOps/PoshDevOps) task that pushes one or more NuGet packages to a .nupkg source
 
 ####How do I install it?
 

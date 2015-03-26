@@ -40,11 +40,13 @@ $($NupkgFilePaths | Out-String)
     foreach($nupkgFilePath in $NupkgFilePaths)
     {
         $nugetExecutable = 'nuget'
-        $nugetParameters = @('push',$nupkgFilePath,'-Source',$SourceUrl)
+        $nugetParameters = @('push',$nupkgFilePath)
 
         if($ApiKey){
-            $nugetParameters = $nugetParameters + @('-ApiKey',$ApiKey)
+            $nugetParameters += $ApiKey
         }
+        
+        $nugetParameters +=('-Source',$SourceUrl,'-NonInteractive')
 
 Write-Debug `
 @"

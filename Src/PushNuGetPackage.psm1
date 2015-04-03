@@ -1,7 +1,7 @@
 # halt immediately on any errors which occur in this module
 $ErrorActionPreference = 'Stop'
 
-function Invoke-PoshDevOpsTask(
+function Invoke(
 [String[]]
 [ValidateCount(1,[Int]::MaxValue)]
 [Parameter(
@@ -37,23 +37,24 @@ Write-Debug `
 $($NupkgFilePaths | Out-String)
 "@
 
+    $NuGetCommand = 'nuget'
+
     foreach($nupkgFilePath in $NupkgFilePaths)
     {
-        $nugetExecutable = 'nuget'
-        $nugetParameters = @('push',$nupkgFilePath)
+        $NuGetParameters = @('push',$nupkgFilePath)
 
         if($ApiKey){
-            $nugetParameters += $ApiKey
+            $NuGetParameters += $ApiKey
         }
         
-        $nugetParameters +=('-Source',$SourceUrl,'-NonInteractive')
+        $NuGetParameters +=('-Source',$SourceUrl,'-NonInteractive')
 
 Write-Debug `
 @"
 Invoking nuget:
-$nugetExecutable $($nugetParameters|Out-String)
+$NuGetCommand $($NuGetParameters|Out-String)
 "@
-        & $nugetExecutable $nugetParameters
+        & $NuGetCommand $NuGetParameters
         
         # handle errors
         if ($LastExitCode -ne 0) {
@@ -65,4 +66,4 @@ $nugetExecutable $($nugetParameters|Out-String)
 
 }
 
-Export-ModuleMember -Function Invoke-PoshDevOpsTask
+Export-ModuleMember -Function Invoke

@@ -2,7 +2,7 @@
 
 ####What is it?
 
-An [Appease](http://appease.io) task template that pushes one or more NuGet packages to a .nupkg source
+An [Appease](http://appease.io) task template that pushes one or more [NuGet](https://nuget.org) packages to a .nupkg source
 
 ####How do I install it?
 
